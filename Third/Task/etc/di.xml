@@ -1,0 +1,33 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Third\Task\Api\Data\FaqsInterface" type="Third\Task\Model\Faqs" />
+    <preference for="Third\Task\Api\FaqsRepositoryInterface" type="Third\Task\Model\FaqsRepository" />
+
+    <virtualType name="FaqsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Third\Task\Model\ResourceModel\Faqs\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="task_faqs_listing_data_source" xsi:type="string">Third\Task\Model\ResourceModel\Faqs\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Third\Task\Model\ResourceModel\Faqs\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">third_task</argument>
+            <argument name="eventPrefix" xsi:type="string">third_task_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">third_task_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Third\Task\Model\ResourceModel\Faqs</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Third\Task\Api\Data\FaqsInterface" xsi:type="string">Third\Task\Api\FaqsRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

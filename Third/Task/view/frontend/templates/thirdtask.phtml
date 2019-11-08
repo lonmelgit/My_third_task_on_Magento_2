@@ -1,0 +1,10 @@
+<?php $_questions = $this->getQuestions(); ?>
+
+<?php if(!empty($_questions)) : ?>
+    <ul>
+    <?php foreach($_questions as $q) : ?>
+        <li> <a href="<?php echo $block->getBaseUrl().'task/index/view/id/'.$q->getId(); ?>"><?php echo $q->getQuestion(); ?></a></li>
+    <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+

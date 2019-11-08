@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Third_Task::faqs" title="FAQs" module="Third_Task" sortOrder="51" resource="Third_Task::faqs"/>
+        <add id="Third_Task::third_configuration" title="Manage FAQs" module="Third_Task" sortOrder="10" parent="Third_Task::faqs" action="third_task/faqs/index" resource="Third_Task::faqs_configuration"/>
+    </menu>
+</config>
+

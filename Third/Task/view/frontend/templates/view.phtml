@@ -1,0 +1,16 @@
+<?php $_question = $this->getQuestion(); ?>
+
+<div><a href="<?php echo $block->getBaseUrl().'task/index/index'; ?>">Back</a></div>
+</br>
+
+<?php if($_question->getId()) : ?>
+    Question:<br />
+    <?php echo $_question->getQuestion(); ?>
+    </br>
+    Answer:<br />
+    <?php echo $_question->getAnswer(); ?>
+    </br>
+    Author: <b><?php echo $this->getAuthorName($_question->getAdminId()) ?></b>
+<?php endif; ?>
+
+
