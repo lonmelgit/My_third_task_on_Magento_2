@@ -8,7 +8,7 @@ Class LinkFaqs extends \Magento\Framework\View\Element\Template
 	
 	public function __construct(
 		\Magento\Framework\View\Element\Template\Context $context,
-		\Third\Task\Helper\Data $dataHelper
+		\Third\Task\Helper\Data $dataHelper //deprecated
 	){
 		parent::__construct($context);
 		$this->dataHelper = $dataHelper;
