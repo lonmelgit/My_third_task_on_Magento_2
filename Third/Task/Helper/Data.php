@@ -8,7 +8,7 @@ use Magento\Store\Model\ScopeInterface;
 class Data extends AbstractHelper 
 {
 	const XML_PATH_THIRD_TASK = 'third_task/';
-
+// для этих целей принято заводить модель ConfigProvider
 	public function getConfigValue($field, $storeCode = null)
 	{
 		return $this->scopeConfig->getValue($field, ScopeInterface::SCOPE_STORE, $storeCode);
