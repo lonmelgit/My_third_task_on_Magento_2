@@ -32,7 +32,7 @@ class View extends \Magento\Framework\App\Action\Action
 
         //echo $_obj->getId();exit;
         */
-
+// удаляйте закомментиированные куски
         $this->_view->loadLayout();
         $this->_view->getLayout()->initMessages();
         $this->_view->renderLayout();

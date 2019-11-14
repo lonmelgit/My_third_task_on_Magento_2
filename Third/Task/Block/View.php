@@ -34,7 +34,8 @@ class View extends \Magento\Framework\View\Element\Template
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $id = $this->getRequest()->getParam('id');
 
-        $_obj = $objectManager->create('Third\Task\Model\Faqs')->load($id);
+        $_obj = $objectManager->create('Third\Task\Model\Faqs')->load($id);//забудьте про objectManager - только через конструктор
+// тем более у вас там есть попытка фабрику использовать
 
         // update cnt
         if($_obj->getId()) {
