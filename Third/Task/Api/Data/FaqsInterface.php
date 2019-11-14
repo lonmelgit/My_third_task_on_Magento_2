@@ -10,7 +10,7 @@ interface FaqsInterface
     const CNT		    = 'cnt';
 
     
-	public function getId();
+	public function getId(); //ужасное форматирование Ctrl + Alt + L в шторме
 
 	public function getQuestion();
 
