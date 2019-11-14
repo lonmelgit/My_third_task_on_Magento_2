@@ -14,6 +14,7 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+// по более модной нотации такие protected переменные без символа _ должны быть и private
         return $this->_pageFactory->create();
     }
 }
