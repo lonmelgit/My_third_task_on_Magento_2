@@ -1,4 +1,5 @@
 <?php
+
 namespace Third\Task\Model;
 
 use Third\Task\Api\Data\FaqsInterface;
@@ -9,19 +10,19 @@ use Magento\Framework\Model\AbstractModel;
 
 class Faqs extends AbstractModel implements FaqsInterface, IdentityInterface
 {
-	const STATUS_ENABLED = 1;
+    const STATUS_ENABLED = 1;
     const STATUS_DISABLED = 0;
-	
-	const CACHE_TAG = 'third_task';
-	
-	//Unique identifier for use within caching
-	protected $_cacheTag = self::CACHE_TAG;
-	
-	protected function _construct()
+
+    const CACHE_TAG = 'third_task';
+
+    //Unique identifier for use within caching
+    protected $_cacheTag = self::CACHE_TAG;
+
+    protected function _construct()
     {
         $this->_init('Third\Task\Model\ResourceModel\Faqs');
     }
-	
+
     public function getIdentities()
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
@@ -32,60 +33,59 @@ class Faqs extends AbstractModel implements FaqsInterface, IdentityInterface
         $values = [];
         return $values;
     }
-	
-	public function getAvailableStatuses()
+
+    public function getAvailableStatuses()
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
-	
-	public function getId()
+
+    public function getId()
     {
         return parent::getData(self::ID);
     }
-	
-	public function getQuestion()
+
+    public function getQuestion()
     {
         return $this->getData(self::QUESTION);
     }
-	
-	public function getAnswer()
+
+    public function getAnswer()
     {
         return $this->getData(self::ANSWER);
     }
-	
-	public function getAdminId()
+
+    public function getAdminId()
     {
         return $this->getData(self::ADMIN_ID);
     }
-	
-	public function getCnt()
+
+    public function getCnt()
     {
         return $this->getData(self::CNT);
     }
-	
 
-	
-	public function setId($id)
+
+    public function setId($id)
     {
         return $this->setData(self::ID, $id);
     }
-	
-	public function setQuestion($question)
+
+    public function setQuestion($question)
     {
         return $this->setData(self::QUESTION, $question);
     }
-	
-	public function setAnswer($answer)
+
+    public function setAnswer($answer)
     {
         return $this->setData(self::ANSWER, $answer);
     }
-	
-	public function setAdminId($admin_id)
+
+    public function setAdminId($admin_id)
     {
         return $this->setData(self::ADMIN_ID, $admin_id);
     }
-	
-	public function setCnt($cnt)
+
+    public function setCnt($cnt)
     {
         return $this->setData(self::CNT, $cnt);
     }

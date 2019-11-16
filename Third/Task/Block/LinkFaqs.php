@@ -4,21 +4,21 @@ namespace Third\Task\Block;
 
 Class LinkFaqs extends \Magento\Framework\View\Element\Template
 {
-	protected $dataHelper;
+	protected $configProvider;
 	
 	public function __construct(
 		\Magento\Framework\View\Element\Template\Context $context,
-		\Third\Task\Helper\Data $dataHelper
+		\Third\Task\Model\ConfigProvider $configProvider
 	){
 		parent::__construct($context);
-		$this->dataHelper = $dataHelper;
+		$this->configProvider = $configProvider;
 	}
 	
 	public function getNewsLink()
 	{
-		$newsLink = $this->dataHelper->getStorefrontConfig('faqs_link');
+		$faqsLink = $this->configProvider->getStorefrontConfig('faqs_link');
 		
-		return $newsLink;
+		return $faqsLink;
 	}
 	
 	public function getBaseUrl()

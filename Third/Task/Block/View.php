@@ -5,20 +5,22 @@ namespace Third\Task\Block;
 use Magento\Framework\View\Element\Template\Context;
 use Third\Task\Model\FaqsFactory;
 use Magento\User\Model\UserFactory;
+
 /**
  * Test List block
  */
 class View extends \Magento\Framework\View\Element\Template
 {
-    protected $_userFactory;
+    private $userFactory;
 
     public function __construct(
         Context $context,
         FaqsFactory $faqs,
         UserFactory $userFactory
-    ) {
-        $this->_faqs = $faqs;
-        $this->_userFactory = $userFactory;
+    )
+    {
+        $this->faqs = $faqs;
+        $this->userFactory = $userFactory;
         parent::__construct($context);
     }
 
@@ -31,27 +33,27 @@ class View extends \Magento\Framework\View\Element\Template
 
     public function getQuestion()
     {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $id = $this->getRequest()->getParam('id');
 
-        $_obj = $objectManager->create('Third\Task\Model\Faqs')->load($id);
+        $obj = $this->faqs->create()->load($id);
 
         // update cnt
-        if($_obj->getId()) {
-            $_obj
-                ->setCnt($_obj->getCnt() + 1)
+        if ($obj->getId()) {
+            $obj
+                ->setCnt($obj->getCnt() + 1)
                 ->save();
 
-            return $_obj;
+            return $obj;
         }
 
 
         return false;
     }
 
-    public function getAuthorName($admin_id = null) {
+    public function getAuthorName($admin_id = null)
+    {
 
-        $user = $this->_userFactory->create()->load($admin_id);
+        $user = $this->userFactory->create()->load($admin_id);
         $name = $user->getName();
         return $name;
     }

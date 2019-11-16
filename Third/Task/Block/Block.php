@@ -1,4 +1,5 @@
 <?php
+
 namespace Third\Task\Block;
 
 use Third\Task\Model\FaqsFactory;
@@ -8,7 +9,7 @@ class Block extends \Magento\Framework\View\Element\Template
 {
     public function __construct(\Magento\Framework\View\Element\Template\Context $context, FaqsFactory $faqs)
     {
-        $this->_faqs = $faqs;
+        $this->faqs = $faqs;
         parent::__construct($context);
     }
 
@@ -21,7 +22,7 @@ class Block extends \Magento\Framework\View\Element\Template
 
     public function getQuestions()
     {
-        $faqs = $this->_faqs->create();
+        $faqs = $this->faqs->create();
         $collection = $faqs->getCollection();
         return $collection;
     }
