@@ -10,7 +10,7 @@ use Magento\Framework\App\Request\DataPersistorInterface;
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
     /**
-     * @var \Rsgitech\News\Model\ResourceModel\Allnews\Collection
+     * @var \Third\News\Model\ResourceModel\Allfaqs\Collection
      */
     protected $collection;
 
@@ -28,7 +28,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
-     * @param CollectionFactory $allnewsCollectionFactory
+     * @param CollectionFactory $allfaqsCollectionFactory
      * @param DataPersistorInterface $dataPersistor
      * @param array $meta
      * @param array $data
@@ -70,7 +70,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
-        /** @var $news \Rsgitech\News\Model\Allnews */
+        /** @var $faqs \Third\News\Model\Allfaqs */
         foreach ($items as $faqs) {
             $this->loadedData[$faqs->getId()] = $faqs->getData();
         }

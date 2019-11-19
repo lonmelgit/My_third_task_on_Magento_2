@@ -1,0 +1,41 @@
+"Manage Faqs","Manage Faqs"
+"Add Questions","Add Questions"
+Back,Back
+"Delete Faqs","Delete Faqs"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Reset,Reset
+"Save and Continue Edit","Save and Continue Edit"
+"Save Faqs","Save Faqs"
+"Page with questions","Page with questions"
+"Page with answers","Page with answers"
+"The faqs has been deleted.","The faqs has been deleted."
+"We can't find a faqs to delete.","We can't find a faqs to delete."
+Faqs,Faqs
+"Manage All Faqs","Manage All Faqs"
+"This faqs no longer exists.","This faqs no longer exists."
+"Edit Faqs","Edit Faqs"
+"Add Faqs","Add Faqs"
+"All Questions","All Questions"
+"Please correct the data sent.","Please correct the data sent."
+"Something went wrong while saving the faqs.","Something went wrong while saving the faqs."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"You saved the faqs.","You saved the faqs."
+Enabled,Enabled
+Disabled,Disabled
+"Could not save the faqs: %1","Could not save the faqs: %1"
+"Faqs with id ""%1"" does not exist.","Faqs with id ""%1"" does not exist."
+"Could not delete the faqs: %1","Could not delete the faqs: %1"
+Edit,Edit
+Delete,Delete
+"Delete %1","Delete %1"
+"Are you sure you want to delete a %1 record?","Are you sure you want to delete a %1 record?"
+"Third Task","Third Task"
+"Faqs Information","Faqs Information"
+Question,Question
+Answer,Answer
+Content,Content
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+ID,ID
+Admin_id,Admin_id
+CNT,CNT

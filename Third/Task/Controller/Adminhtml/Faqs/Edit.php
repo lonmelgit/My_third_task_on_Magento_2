@@ -46,12 +46,12 @@ class Edit extends \Magento\Backend\App\Action
     /**
      * Init actions
      *
-     * @return \Magento\Backend\Model\View\Result\Allnews
+     * @return \Magento\Backend\Model\View\Result\Allfaqs
      */
     protected function _initAction()
     {
         // load layout, set active menu and breadcrumbs
-        /** @var \Magento\Backend\Model\View\Result\Allnews $resultPage */
+        /** @var \Magento\Backend\Model\View\Result\Allfaqs $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Third_Task::task_faqs')
             ->addBreadcrumb(__('Faqs'), __('Faqs'))
@@ -60,9 +60,9 @@ class Edit extends \Magento\Backend\App\Action
     }
 
     /**
-     * Edit Allnews
+     * Edit Allfaqs
      *
-     * @return \Magento\Backend\Model\View\Result\Allnews|\Magento\Backend\Model\View\Result\Redirect
+     * @return \Magento\Backend\Model\View\Result\Allfaqs|\Magento\Backend\Model\View\Result\Redirect
      * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function execute()
@@ -85,7 +85,7 @@ class Edit extends \Magento\Backend\App\Action
         $this->_coreRegistry->register('task_faqs', $model);
 
         // 5. Build edit form
-        /** @var \Magento\Backend\Model\View\Result\Allnews $resultPage */
+        /** @var \Magento\Backend\Model\View\Result\Allfaqs $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
             $id ? __('Edit Faqs') : __('Add Faqs'),

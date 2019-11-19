@@ -15,20 +15,20 @@ class Save extends \Magento\Backend\App\Action
     protected $dataPersistor;
 
     /**
-     * @var \Rsgitech\News\Model\AllnewsFactory
+     * @var \Third\News\Model\AllfaqsFactory
      */
     private $faqsFactory;
 
     /**
-     * @var \Rsgitech\News\Api\AllnewsRepositoryInterface
+     * @var \Third\News\Api\AllfaqsRepositoryInterface
      */
     private $faqsRepository;
 
     /**
      * @param Action\Context $context
      * @param DataPersistorInterface $dataPersistor
-     * @param \Rsgitech\News\Model\AllnewsFactory $allnewsFactory
-     * @param \Rsgitech\News\Api\AllnewsRepositoryInterface $allnewsRepository
+     * @param \Third\News\Model\AllfaqsFactory $allfaqsFactory
+     * @param \Third\News\Api\AllfaqsRepositoryInterface $allfaqsRepository
      */
     public function __construct(
         \Magento\Backend\Model\Auth\Session $authSession,
@@ -75,7 +75,7 @@ class Save extends \Magento\Backend\App\Action
                 $data['id'] = null;
             }
 
-            /** @var \Rsgitech\Faqs\Model\Allfaqs $model */
+            /** @var \Third\Faqs\Model\Allfaqs $model */
 
             $adminId = $this->authSession->getUser()->getId();
 
